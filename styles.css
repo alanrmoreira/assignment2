@@ -112,15 +112,9 @@ footer{
 #img-footer{
     width: 12rem;
 }
-@media screen and (max-width:2100px) {
-    #menu{
-        width: 100%;
-        align-items: center;
-        background-color: greenyellow;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+
+#hamburger {
+    display: none;
 }
 
 @media screen and (max-width:671px) {
@@ -134,5 +128,47 @@ footer{
         margin: 0 auto;
         max-width: 95%;
     }
+
+    #btn-goup{
+        padding: 1rem;
+        max-width: 200px;
+        height: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .btn{
+        display: none;
+    }
+
+    #menu{
+        height: 3rem;
+    }
+
+    #hamburger {
+        display: block;
+        color: #000;
+        float: right;
+        font-size: 1.5rem;
+        width: 2rem;
+        rotate: 90deg;
+        right: 1rem;
+        position: absolute;
+        background-color: transparent;
+    }
  
+}
+
+@media screen and (max-width:2100px) {
+    #menu{
+        width: 100%;
+        align-items: center;
+        background-color: greenyellow;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
