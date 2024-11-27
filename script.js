@@ -90,14 +90,15 @@ window.addEventListener("resize", () => {
 
     if (screen.width > 671) {
 
-        document.getElementById('menu').removeAttribute('style');
+        let menubar = document.getElementById('menu');
+        
+        menubar.removeAttribute('style');
+        menubar.setAttribute('class', 'closed');
 
         handleButtonsHamburger(document.getElementsByClassName('btn'), true);
 
     } else {
-
         handleButtonsHamburger(document.getElementsByClassName('btn'), false);
-
     }
 }
 
