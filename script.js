@@ -88,17 +88,20 @@ const handleHamburgerMenu = () => {
 
 window.addEventListener("resize", () => {
 
-    if (screen.width > 671) {
+    let menuBar = document.getElementById('menu');
 
-        let menubar = document.getElementById('menu');
+    if (screen.width > 671) {
         
-        menubar.removeAttribute('style');
-        menubar.setAttribute('class', 'closed');
+        menuBar.removeAttribute('style');
+        menuBar.setAttribute('class', 'closed');
 
         handleButtonsHamburger(document.getElementsByClassName('btn'), true);
 
     } else {
-        handleButtonsHamburger(document.getElementsByClassName('btn'), false);
+
+        if(menuBar.getAttribute('class') === 'closed'){
+            handleButtonsHamburger(document.getElementsByClassName('btn'), false);
+        }
     }
 }
 
