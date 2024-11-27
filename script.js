@@ -1,7 +1,7 @@
 var elems = document.getElementsByClassName('btn');
 
 for (let i = 0; i < elems.length; i++) {
-    elems[i].addEventListener('click', (e)=> handleClick(e), false);
+    elems[i].addEventListener('click', (e) => handleClick(e), false);
 }
 
 const handleClick = (e) => {
@@ -54,32 +54,51 @@ const setActiveBtn = (item) => {
     item.target.setAttribute('class', 'btn active-btn');
 }
 
-const setActiveExp = (company) =>{
+const setActiveExp = (company) => {
     document.getElementById(company).setAttribute('class', 'professional-experience active-exp');
+}
+
+const handleButtonsHamburger = (buttons, isVisble) => {
+
+    for (let button of buttons) {
+        button.setAttribute('style', isVisble ? 'display:block' : 'display:none');
+    }
 }
 
 const handleHamburgerMenu = () => {
 
     let menuBar = document.getElementById('menu');
-    let buttons = document.getElementsByClassName('btn');
 
-    if(menuBar.getAttribute('class') == 'closed'){
-        
+    if (menuBar.getAttribute('class') === 'closed') {
+
         menuBar.setAttribute('class', 'open');
         menuBar.setAttribute('style', 'height: 20rem; align-items: flex-start');
 
-        for(let button of buttons){
-            button.setAttribute('style','display:block');
-        }
-    
-        
-    }else{
-        
+        handleButtonsHamburger(document.getElementsByClassName('btn'), true);
+
+    } else {
+
         menuBar.setAttribute('class', 'closed');
         menuBar.setAttribute('style', 'height: 3rem');
 
-        for(let button of buttons){
-            button.setAttribute('style','display:none');
-        }
+        handleButtonsHamburger(document.getElementsByClassName('btn'), false);
+
     }
 }
+
+window.addEventListener("resize", () => {
+
+    if (screen.width > 671) {
+
+        document.getElementById('menu').removeAttribute('style');
+
+        handleButtonsHamburger(document.getElementsByClassName('btn'), true);
+
+    } else {
+
+        handleButtonsHamburger(document.getElementsByClassName('btn'), false);
+
+    }
+}
+
+);
