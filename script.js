@@ -57,3 +57,29 @@ const setActiveBtn = (item) => {
 const setActiveExp = (company) =>{
     document.getElementById(company).setAttribute('class', 'professional-experience active-exp');
 }
+
+const handleHamburgerMenu = () => {
+
+    let menuBar = document.getElementById('menu');
+    let buttons = document.getElementsByClassName('btn');
+
+    if(menuBar.getAttribute('class') == 'closed'){
+        
+        menuBar.setAttribute('class', 'open');
+        menuBar.setAttribute('style', 'height: 20rem; align-items: flex-start');
+
+        for(let button of buttons){
+            button.setAttribute('style','display:block');
+        }
+    
+        
+    }else{
+        
+        menuBar.setAttribute('class', 'closed');
+        menuBar.setAttribute('style', 'height: 3rem');
+
+        for(let button of buttons){
+            button.setAttribute('style','display:none');
+        }
+    }
+}
