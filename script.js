@@ -91,7 +91,7 @@ window.addEventListener("resize", () => {
     let menuBar = document.getElementById('menu');
 
     if (screen.width > 671) {
-        
+
         menuBar.removeAttribute('style');
         menuBar.setAttribute('class', 'closed');
 
@@ -99,7 +99,7 @@ window.addEventListener("resize", () => {
 
     } else {
 
-        if(menuBar.getAttribute('class') === 'closed'){
+        if (menuBar.getAttribute('class') === 'closed') {
             handleButtonsHamburger(document.getElementsByClassName('btn'), false);
         }
     }
