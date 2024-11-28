@@ -1,8 +1,6 @@
-var elems = document.getElementsByClassName('btn');
+var buttons = document.getElementsByClassName('btn');
 
-for (let i = 0; i < elems.length; i++) {
-    elems[i].addEventListener('click', (e) => handleClick(e), false);
-}
+
 
 const handleClick = (e) => {
 
@@ -86,7 +84,7 @@ const handleHamburgerMenu = () => {
     }
 }
 
-window.addEventListener("resize", () => {
+const controlResizeAndOrientationChange = () => {
 
     let menuBar = document.getElementById('menu');
 
@@ -95,7 +93,7 @@ window.addEventListener("resize", () => {
         menuBar.removeAttribute('style');
         menuBar.setAttribute('class', 'closed');
 
-        handleButtonsHamburger(document.getElementsByClassName('btn'), true);
+        handleButtonsHamburger(buttons, true);
 
     } else {
 
@@ -105,4 +103,10 @@ window.addEventListener("resize", () => {
     }
 }
 
-);
+for(button of buttons){
+    button.addEventListener('click', (e) => handleClick(e), false);
+}
+
+window.addEventListener('resize', controlResizeAndOrientationChange);
+
+window.addEventListener("orientationchange", controlResizeAndOrientationChange);
