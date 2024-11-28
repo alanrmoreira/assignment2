@@ -1,7 +1,5 @@
 var buttons = document.getElementsByClassName('btn');
 
-
-
 const handleClick = (e) => {
 
     let previousActiveBtn = document.getElementsByClassName('active-btn');
